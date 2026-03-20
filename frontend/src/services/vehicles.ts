@@ -10,7 +10,7 @@ export interface VehicleItem {
   name: string;
   type: VehicleType;
   brand: string;
-  model: string;
+  vehicleModel: string;
   year: number;
   serialNumber?: string;
   status: VehicleStatus;
@@ -32,11 +32,12 @@ export interface CreateVehiclePayload {
   name: string;
   type: VehicleType;
   brand: string;
-  model: string;
+  vehicleModel: string;
   year: number;
   serialNumber?: string;
   trackerId?: string;
   notes?: string;
+  location: { type: 'Point'; coordinates: [number, number] };
 }
 
 export type UpdateVehiclePayload = Partial<CreateVehiclePayload>;
